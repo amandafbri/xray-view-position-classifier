@@ -1,3 +1,6 @@
+import os
+import shutil
+
 import pandas as pd
 import numpy as np
 
@@ -22,14 +25,33 @@ train, validation, test = np.split(
         metadata.sample(frac=1, random_state=0), [int(.8*len(metadata)), int(.9*len(metadata))]
     )
 
-train['ML_USE'] = 'train'
-validation['ML_USE'] = 'validation'
-test['ML_USE'] = 'test'
+# Remember to check if there are examples of all labels in all sets
+train['view'].value_counts()
+validation['view'].value_counts()
+test['view'].value_counts()
 
-metadata_for_automl = pd.concat([train, validation, test], ignore_index=True)
-metadata_for_automl = metadata_for_automl[metadata_for_automl.columns[::-1]]
-metadata_for_automl = metadata_for_automl.rename(columns={'filename': 'GCS_FILE_PATH', 'view': 'LABEL'})
+# Organize files
+os.mkdir('data')
+os.mkdir('data/Train')
+os.mkdir('data/Validation')
+os.mkdir('data/Test')
 
-metadata_for_automl['GCS_FILE_PATH'] = metadata_for_automl['GCS_FILE_PATH'].apply(lambda x: 'gs://my-bucket/data/' + x)
+for label in train['view'].unique():
+    os.mkdir(f'data/Train/{label}')
+    os.mkdir(f'data/Validation/{label}')
+    os.mkdir(f'data/Test/{label}')
 
-metadata_for_automl.to_csv('metadata_for_automl.csv', header=None, index=False)
+for example in train.iterrows():
+    file = example[1]['filename']
+    label = example[1]['view']
+    shutil.copy(f'C:/Users/amand/Desktop/Projects/covid-chestxray-dataset/images/{file}', f'data/Train/{label}')
+
+for example in validation.iterrows():
+    file = example[1]['filename']
+    label = example[1]['view']
+    shutil.copy(f'C:/Users/amand/Desktop/Projects/covid-chestxray-dataset/images/{file}', f'data/Validation/{label}')
+
+for example in test.iterrows():
+    file = example[1]['filename']
+    label = example[1]['view']
+    shutil.copy(f'C:/Users/amand/Desktop/Projects/covid-chestxray-dataset/images/{file}', f'data/Test/{label}')
