@@ -1,6 +1,6 @@
 # X-ray view position simple classifier
 
-Despite the healthcare area having several discussions about interoperability and adoption of standards, there are still many databases not updated in this regard.
+Despite the healthcare area having several discussions about interoperability and adoption of standards, there are still many databases not updated in this regard. In addition to this, there are the data and metadata integrity issues.
 
 One of the topics related to this is about the metadata of very common exams, like X-rays. It is often observed, for example, that the position in which the X-ray was taken is recorded in an erroneous manner (examination with lateral view, but indicated as anteroposterior, etc.). One of the cases in which this can have a major impact is in the creation of machine learning models for predicting medical findings, since the patterns observed from different views can be quite distinct for the same finding.
 
