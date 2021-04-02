@@ -8,7 +8,7 @@ With this in mind, the objective of this project was to create a classifier of r
 
 ## Repository details
 
-- Python 3.7.4
+- Python 3.7.4 and 3.7.10
 - In the GCP_Automl folder there is a simple script to prepare data to be used in AutoML Vision tool from Google Cloud Platform.
 - The public dataset "COVID-19 image data collection" used for this project is available in GitHub:
 
