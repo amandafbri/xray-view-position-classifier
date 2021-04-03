@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  xray-classifier-api:
+    build: .
+    ports:
+      - "5005:5005"
