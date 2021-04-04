@@ -1,4 +1,6 @@
-from flask import Flask, jsonify
+import json
+
+from flask import Flask, request, jsonify
 from flask_restplus import Api, Resource, fields
 
 from classifier import classify
@@ -13,8 +15,7 @@ expected_request = api.model('X-ray Image from URL', {'url_image': fields.String
 class XrayViewPositionClassifier(Resource):
     @api.expect(expected_request)
     def post(self):
-        request_dict = api.payload
-
+        request_dict = json.loads(request.data)
         view_predicted = classify(request_dict)
 
         return jsonify(message=f'This is an X-ray with {view_predicted} view position.')
