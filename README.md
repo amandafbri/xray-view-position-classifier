@@ -9,7 +9,9 @@ With this in mind, the objective of this project was to create a classifier of r
 ## Repository details
 
 - Python 3.7.4 and 3.7.10
-- In the GCP_Automl folder there is a simple script to prepare data to be used in AutoML Vision tool from Google Cloud Platform.
+- In the `pipeline_before_deploy` folder there are the scripts and notebook for preparing the data, training and testing the model. In the GCP_Automl folder there is a simple script to prepare data to be used in AutoML Vision tool from Google Cloud Platform, but it was not used here.
+- It was created a notebook with some explanations about the pipeline because this project was presented as a hands on. Check it out [here](https://www.youtube.com/c/Roadsec/videos).
+- In the `xray_classifier_api` folder there are the Flask API created for serving the model.
 - The public dataset "COVID-19 image data collection" used for this project is available in GitHub:
 
 ```
