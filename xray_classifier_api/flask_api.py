@@ -22,4 +22,4 @@ class XrayViewPositionClassifier(Resource):
 
 
 def create_app():
-    return app
+    return app.run(host="0.0.0.0", port=5005)

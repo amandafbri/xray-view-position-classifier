@@ -1,1 +1,1 @@
-python startup.py
+python xray_classifier_api/startup.py

@@ -8,6 +8,6 @@ RUN apt update && apt install -y git
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
-COPY xray_classifier_api /app/
+COPY xray_classifier_api /app/xray_classifier_api/
 
-ENTRYPOINT [ "/bin/bash","/app/entrypoint.sh" ]
+ENTRYPOINT [ "/bin/bash","/app/xray_classifier_api/entrypoint.sh" ]
