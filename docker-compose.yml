@@ -2,6 +2,8 @@ version: '3'
 
 services:
   xray-classifier-api:
-    build: .
+    build:
+      context: .
+      dockerfile: xray_classifier_api/Dockerfile
     ports:
       - "5005:5005"
