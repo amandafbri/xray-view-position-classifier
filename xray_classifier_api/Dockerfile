@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt --no-cache-dir --compile
 
 COPY xray_classifier_api /app/xray_classifier_api/
 
-ENTRYPOINT [ "/bin/bash","/app/xray_classifier_api/entrypoint.sh" ]
+ENTRYPOINT [ "/bin/bash","/xray_classifier_api/entrypoint.sh" ]
