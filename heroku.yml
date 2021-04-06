@@ -1,5 +1,0 @@
-build:
-  docker:
-    web: xray_classifier_api/Dockerfile
-run:
-  web: gunicorn flask_api:main
