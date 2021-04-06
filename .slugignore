@@ -1,5 +1,6 @@
-pipeline_before_deploy
+pipeline_before_deploy/
+tests/
 .flake8
-tests
 pytest.ini
 README.md
+docker-compose.yml
