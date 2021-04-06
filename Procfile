@@ -1,1 +1,1 @@
-web: python flask_api.py
+web: python xray_classifier_api/flask_api.py
