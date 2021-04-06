@@ -1,1 +1,1 @@
-web: python xray_classifier_api/flask_api.py
+web: gunicorn flask_api:main

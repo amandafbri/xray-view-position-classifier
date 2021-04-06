@@ -1,6 +1,7 @@
 autokeras==1.0.12
 Flask==1.1.2
 flask-restplus==0.13.0
+gunicorn
 numpy==1.19.2
 Pillow==8.2.0
 requests==2.25.1
