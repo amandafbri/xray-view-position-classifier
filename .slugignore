@@ -1,0 +1,5 @@
+pipeline_before_deploy
+.flake8
+tests
+pytest.ini
+README.md
