@@ -10,4 +10,7 @@ RUN pip install -r requirements.txt --no-cache-dir --compile
 
 COPY xray_classifier_api /app/xray_classifier_api/
 
-ENTRYPOINT [ "/bin/bash","/xray_classifier_api/entrypoint.sh" ]
+CMD ["python", "/xray_classifier_api/flask_api.py"]
+
+# To run with Docker-Compose
+# ENTRYPOINT [ "/bin/bash","/xray_classifier_api/entrypoint.sh" ]

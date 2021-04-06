@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 
 from flask import Flask, request, jsonify
 from flask_restplus import Api, Resource, fields
@@ -25,3 +26,8 @@ class XrayViewPositionClassifier(Resource):
 def create_app():
     port = int(os.environ.get('PORT', 5000))
     return app.run(host='0.0.0.0', port=port)
+
+
+if __name__ == '__main__':
+    logging.info('Starting to run app...')
+    create_app()
