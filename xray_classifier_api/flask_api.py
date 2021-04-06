@@ -1,3 +1,4 @@
+import os
 import json
 
 from flask import Flask, request, jsonify
@@ -22,4 +23,5 @@ class XrayViewPositionClassifier(Resource):
 
 
 def create_app():
-    return app.run(host='0.0.0.0', port=5005)
+    port = int(os.environ.get('PORT', 5000))
+    return app.run(host='0.0.0.0', port=port)
