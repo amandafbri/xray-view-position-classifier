@@ -1,0 +1,1 @@
+web: gunicorn xray_classifier_api.flask_api:main
