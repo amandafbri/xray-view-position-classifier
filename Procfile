@@ -1,1 +1,1 @@
-web: gunicorn xray_classifier_api.flask_api:main
+web: gunicorn xray_classifier_api.flask_api:main --max-requests 1500 --timeout 90
