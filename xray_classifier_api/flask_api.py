@@ -9,6 +9,14 @@ from xray_classifier_api.classifier import classify
 app = Flask(__name__)
 api = Api(app, doc=False)
 
+
+@api.route('')
+class HealthCheck(Resource):
+    def get(self):
+        logging.info('Health checking...')
+        return jsonify(message='Status ok')
+
+
 expected_request = api.model('X-ray Image from URL', {'url_image': fields.String('The image URL goes here.')})
 
 

@@ -1,1 +1,1 @@
-web: gunicorn xray_classifier_api.startup:create_app\(\)
+web: gunicorn xray_classifier_api.startup:create_app\(\) --log-level info
