@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT xray_classifier_api.flask_api:app --log-level info --max-requests 1500 --timeout 90
+web: gunicorn xray_classifier_api.flask_api:app -b 0.0.0.0:$PORT -w 3
