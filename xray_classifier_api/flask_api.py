@@ -5,13 +5,13 @@ import logging
 from flask import Flask, request, jsonify
 from flask_restplus import Api, Resource, fields
 
-from xray_classifier_api.classifier import classify
+from classifier import classify
 
 app = Flask(__name__)
 api = Api(app, doc=False)
 
 
-@api.route('')
+@api.route('/healthcheck')
 class HealthCheck(Resource):
     def get(self):
         logging.info('Health checking...')
