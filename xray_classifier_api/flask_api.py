@@ -23,9 +23,5 @@ class XrayViewPositionClassifier(Resource):
 
 
 def create_app():
-    return app
-
-
-if __name__ == '__main__':
     logging.info('Starting to run app...')
-    app.run()
+    return app

@@ -5,5 +5,4 @@ pytest.ini
 README.md
 docker-compose.yml
 entrypoint.sh
-startup.py
 Dockerfile

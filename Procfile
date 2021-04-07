@@ -1,1 +1,1 @@
-web: gunicorn xray_classifier_api.flask_api:app -b 0.0.0.0:$PORT -w 3
+web: gunicorn xray_classifier_api.startup:create_app\(\) -b 0.0.0.0:$PORT -w 3
