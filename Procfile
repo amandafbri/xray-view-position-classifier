@@ -1,1 +1,0 @@
-web: gunicorn xray_classifier_api.startup:app --log-level info

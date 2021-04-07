@@ -26,7 +26,12 @@ def classify(request_dict: dict) -> str:
         prediction = model.predict(img_adjusted)
 
         prediction_index = np.where(prediction.round()[0] == 1)[0][0]
-        classes = {0: 'AP', 1: 'AP_Supine', 2: 'L', 3: 'PA'}
+        classes = {
+            0: 'Anteroposterior (AP)',
+            1: 'Anteroposterior Supine (AP Supine)',
+            2: 'Lateral (L)',
+            3: 'Posteroanterior (PA)'
+        }
         view_predicted = classes.get(prediction_index)
 
     return view_predicted

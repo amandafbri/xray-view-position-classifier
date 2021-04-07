@@ -1,8 +1,0 @@
-pipeline_before_deploy/
-tests/
-.flake8
-pytest.ini
-README.md
-docker-compose.yml
-entrypoint.sh
-Dockerfile
