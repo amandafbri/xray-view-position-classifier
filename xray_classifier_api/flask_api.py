@@ -30,6 +30,5 @@ class XrayViewPositionClassifier(Resource):
         return jsonify(message=f'This is an X-ray with {view_predicted} view position.')
 
 
-def create_app():
-    logging.info('Starting to run app...')
-    return app
+if __name__ == "__main__":
+    app.run()
