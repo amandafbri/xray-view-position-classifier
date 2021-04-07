@@ -11,6 +11,12 @@ api = Api(app, doc=False)
 expected_request = api.model('X-ray Image from URL', {'url_image': fields.String('The image URL goes here.')})
 
 
+@api.route('/helloworld')
+class HelloWorld(Resource):
+    def get(self):
+        return jsonify(message='Hello world!')
+
+
 @api.route('/predict')
 class XrayViewPositionClassifier(Resource):
     @api.expect(expected_request)
