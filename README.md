@@ -26,3 +26,7 @@ The main purpose of this project was to talk about some basic concepts about Art
 Since the AI area is growing up so fast, there are a lot of possibilities, as well as a lot of problems to solve out there. For those looking to improve their pipelines, I expanded the diagram with some suggestions for the different steps. **But remember: using AI is not always the best answer!** Consider the costs, the maintenance, the users, the problem itself. Seek simplicity. And if there is no way to scape from AI, use it responsibly. 😌
 
 ![AI pipelines](https://user-images.githubusercontent.com/42866976/113523969-ddd55e80-9581-11eb-8b0e-dbf5ea789635.png)
+
+## Model card
+![model_card](https://user-images.githubusercontent.com/42866976/122627284-d142ab80-d084-11eb-81ad-3ecfba44696d.png)
+
