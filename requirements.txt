@@ -1,4 +1,5 @@
 autokeras==1.0.12
+keras-tuner==1.0.2
 Flask==1.1.2
 flask-restplus==0.13.0
 gunicorn==20.0.4
