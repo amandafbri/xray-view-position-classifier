@@ -25,4 +25,7 @@ jobs:
           poetry run pytest --cov=./ --cov-report=xml
           poetry run codecov
       - name: Upload coverage to Codecov
-        run: curl -0s https://uploader.codecov.io/latest/linux/codecov && chmod -x codecov && ./codecov --token 902177c3-ff52-4cbc-9d13-986b41911385
+        run: |
+          curl -0s https://uploader.codecov.io/latest/linux/codecov
+          chmod -x codecov
+          ./codecov --token 902177c3-ff52-4cbc-9d13-986b41911385
