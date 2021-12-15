@@ -28,4 +28,4 @@ jobs:
         uses: codecov/codecov-action@v2
           coverage xml
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        run: curl -0s https://uploader.codecov.io/latest/linux/codecov && chmod -x codecov && ./codecov --token 902177c3-ff52-4cbc-9d13-986b41911385
