@@ -19,5 +19,5 @@ class FlaskAPItests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
             json.loads(response.data)['message'],
-            'This is an X-ray with L view position.'
+            'This is an X-ray with Lateral (L) view position.'
         )
