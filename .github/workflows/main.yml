@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install poetry
+        run: pip install poetry
+      - name: Install dependencies
+        run: poetry install
+      - name: Run tests and collect coverage
+        run: |
+          poetry run pytest
+          poetry run pytest --cov=./ --cov-report=xml
+          poetry run codecov
+      - name: Upload coverage to Codecov
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          find . -iregex "codecov.*"
+          chmod +x codecov 
+          ./codecov -t 902177c3-ff52-4cbc-9d13-986b41911385
