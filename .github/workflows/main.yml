@@ -26,6 +26,7 @@ jobs:
           poetry run codecov
       - name: Upload coverage to Codecov
         run: |
-          curl -0s https://uploader.codecov.io/latest/linux/codecov
-          chmod -x codecov
-          ./codecov --token 902177c3-ff52-4cbc-9d13-986b41911385
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          find . -iregex "codecov.*"
+          chmod +x codecov 
+          ./codecov -t 902177c3-ff52-4cbc-9d13-986b41911385
